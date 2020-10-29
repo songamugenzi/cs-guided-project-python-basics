@@ -14,7 +14,79 @@ Examples:
 - XO("ooxXm") ➞ True (Case insensitive)
 - XO("zpzpzpp") ➞ True (Returns True if no x and o)
 - XO("zzoo") ➞ False
-"""
-def XO(txt):
-    # Your code here
 
+set an o and x counter to zero
+loop over each character in the string
+do a check if it contains an "x"
+   increment the x counter
+do a check if it contains an "o"
+   increment the o counter
+
+check if x counter is eqaul to o counter 
+   return true to the caller 
+otherwise
+   return false to the caller
+"""
+# def XO(txt:str) -> bool:
+#     # Your code here
+#     # set an o and x counter to zero
+#     o_counter = 0
+#     x_counter = 0
+#     # loop over each character in the string
+#     for char in txt:
+#         # do a check if it contains an "x"
+#         if char == "x":
+#             # increment the x counter
+#             x_counter += 1
+#         # do a check if it contains an "X"
+#         elif char == "X":
+#             # increment the x counter
+#             x_counter += 1
+#         # do a check if it contains an "o"
+#         elif char == "o":
+#             # increment the o counter
+#             o_counter += 1
+#         # do a check if it contains an "O"
+#         elif char == "O":
+#             # increment the o counter
+#             o_counter += 1
+
+#     # check if x counter is eqaul to o counter 
+#     if x_counter == o_counter:
+#         # return true to the caller 
+#         return True
+#     # otherwise
+#     else:
+#         # return false to the caller
+#         return False
+
+# def XO(txt:str) -> bool:
+#     # Your code here
+#     # set an o and x counter to zero
+#     o_counter = 0
+#     x_counter = 0
+#     # loop over each character in the string
+#     for char in txt:
+#         # do a check if it contains an "x"
+#         if char == "x" or char == "X":
+#             # increment the x counter
+#             x_counter += 1
+#         # do a check if it contains an "o"
+#         elif char == "o" or char == "O":
+#             # increment the o counter
+#             o_counter += 1
+#         # return x counter is eqaul to o counter as a boolean to the caller
+#         return x_counter == o_counter
+
+def XO(txt:str) -> bool:
+    # lowecase the txt
+    lower_txt = txt.lower()
+    #return the count of Lower txt using "x" as a parameter == the count of Lower txt using "o"
+    # as a parameter as a boolean value to the caller
+    return lower_txt.count("x") == lower_txt.count("o")
+
+print(XO("ooxx"))
+print(XO("xooxx"))
+print(XO("ooxXm"))
+print(XO("zpzpzpp"))
+print(XO("zzoo"))
